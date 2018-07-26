@@ -20,20 +20,20 @@ Shell 用来生成 html 巡检文件。Python 3 脚本可用来执行 Shell 脚本，并将 html 文件
 
 	import paramiko
 
-* paramiko 还有其他的依赖库，这里不列出  *
+* paramiko 还有其他的依赖库，这里不列出 *
 
 
 ## 2.3 用法
 **方法一：**
-- 1，将 tmp 目录下的所有文件上传到待巡检机器的 /tmp/daily_check 目录下，
+- 1，将 tmp 目录下的所有文件上传到待巡检机器的 `/tmp/daily_check` 目录下，
 - 2，配置 `ip_list.conf` 文件，最好用 oracle 用户，否则可能脚本执行不成功。，
-- 3，在管理机上执行 daily_check.py 。
+- 3，在管理机上执行 `daily_check.py` 。
 
 **方法二：**
-- 1，将 tmp 目录下的所有文件上传到待巡检机器的 /tmp/daily_check 目录下，
-- 2，将daily_check.sh 放到 crontab 内定时执行，
-- 3，配置 `ip_list.conf` 文件，用户名随意，只要有读取 /tmp/daily_check/log 的文件权限即可，
-- 3，在管理机上执行 daily_check.py 。
+- 1，将 tmp 目录下的所有文件上传到待巡检机器的 `/tmp/daily_check` 目录下，
+- 2，将`daily_check.sh` 放到 crontab 内定时执行，
+- 3，配置 `ip_list.conf` 文件，用户名随意，只要有读取 `/tmp/daily_check/log` 的文件权限即可，
+- 3，在管理机上执行 `daily_check.py` 。
 
 
 # 3、目录结构
@@ -60,7 +60,7 @@ daily_check
 
 ```
 
-- 1, get_html.py 用来执行巡检脚本，并抓取 html 文件到本地
+- 1，get_html.py 用来执行巡检脚本，并抓取 html 文件到本地
 - 2，ip_list.conf 待巡检机器的配置信息。ip、端口、用户名、密码
 - 3，daily_check.sh 巡检的主角本，get_html.py 调用的也是该脚本
 - 4，alert_check.sh 巡检数据库在前一天的 alert 告警信息
