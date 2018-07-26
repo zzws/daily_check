@@ -1,4 +1,0 @@
-Filesystem Size  Used Avail Use% Mounted_on
-/dev/sda1 99G   19G   75G  21% /
-tmpfs 63G  458M   63G   1% /dev/shm
-/dev/sda3 197G   64G  124G  34% /oracle
