@@ -5,10 +5,10 @@ import sys, traceback, os, time
 import threading
 
 # 远端执行目录
-remote_path = '/tmp/enmo/daily_check/log'
+remote_path = '/tmp/daily_check/log'
 
 # 本地存放html目录
-loc_path = 'E:\enmo\daily_check'
+loc_path = 'E:\daily_check'
 
 # 多线程分片配置，假如有1000个机器，那么并发就是1000/parallel_num = 500个并发
 parallel_num = 5
@@ -60,7 +60,7 @@ def exec_sh(ip, port, username, password):
     conn.connect(hostname=ip, port=port, username=username, password=password)
     try:
         # print("begin execute daily check at %s" % ip)
-        stdin, stdout, stderr = conn.exec_command("cd /tmp/enmo/daily_check/;sh daily_check.sh")
+        stdin, stdout, stderr = conn.exec_command("cd /tmp/daily_check/;sh daily_check.sh")
         # print(stdout.read())
         # print(stderr.read())
     except:
